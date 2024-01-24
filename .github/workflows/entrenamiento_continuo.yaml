@@ -40,7 +40,7 @@ jobs:
           git config --local user.email "ignacio_m_16@hotmail.com"
           git config --local user.name "github-actions[bot]"
           git add report.txt
-          git commit -m "Updating"
+          git commit -m "Ultimo update?"
           git push
 
       - name: Acceso al repositorio 2
