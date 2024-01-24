@@ -46,7 +46,7 @@ jobs:
       - uses: iterative/setup-cml@v1
       - name: Agregado comentario con el reporte
         run: |
-          git pull origin
+          git checkout HEAD
           cat report.txt >> report.md 
           cml comment create report.md 
         # --target=commit/355d689
