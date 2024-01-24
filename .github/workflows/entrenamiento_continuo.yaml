@@ -50,5 +50,5 @@ jobs:
       - name: Agregado comentario con el reporte
         run: |
           cat report.txt >> report.md 
-          cml comment create --target=355d689 report.md
+          cml comment create --target=commit/355d689 report.md
          
