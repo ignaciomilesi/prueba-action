@@ -2,7 +2,7 @@ name: Continuous Training
 on:
   push:
     branches:
-      - main
+      - prueba-coment
 jobs:
   continuous-training:
     runs-on: ubuntu-latest
