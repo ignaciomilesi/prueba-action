@@ -3,6 +3,13 @@ on:
   push:
     branches:
       - prueba-coment
+  workflow_dispatch:
+    inputs:
+      reason:
+        description: Motivo de la corrida
+        required: false
+        default: running CT
+        
 jobs:
   continuous-training:
     runs-on: ubuntu-latest
