@@ -43,12 +43,11 @@ jobs:
           git commit -m "Ultimo update?"
           git push
 
-      - name: Acceso al repositorio 2
-        uses: actions/checkout@v3
-
       - uses: iterative/setup-cml@v1
       - name: Agregado comentario con el reporte
         run: |
+          git pull origin
           cat report.txt >> report.md 
-          cml comment create --target=commit/355d689 report.md
+          cml comment create report.md 
+        # --target=commit/355d689
          
