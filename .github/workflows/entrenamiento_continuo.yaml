@@ -43,10 +43,12 @@ jobs:
           git commit -m "Updating"
           git push
 
+      - name: Acceso al repositorio 2
+        uses: actions/checkout@v3
+
       - uses: iterative/setup-cml@v1
       - name: Agregado comentario con el reporte
         run: |
-          git fetch 
           cat report.txt >> report.md 
           cml comment create report.md
          
