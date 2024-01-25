@@ -1,8 +1,6 @@
-name: Continuous Training
+name: Carga de comentario
 on:
   push:
-    branches:
-      - prueba-coment
     paths:
       - report.txt
 
