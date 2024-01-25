@@ -12,8 +12,3 @@ jobs:
     steps:
       - name: Acceso al repositorio
         uses: actions/checkout@v3
-
-
-        
-
-         
