@@ -30,6 +30,7 @@ jobs:
           git add report.txt
           git commit -m "Ultimo update?"
           git push
+          git log -1
 
       #- name: Carga del comentarista
       #  uses: iterative/setup-cml@v2
@@ -46,15 +47,5 @@ jobs:
       #    echo ${{ github.head.ref }}
       #    echo ${{ github.sha }}
         
-      - name: Create comment
-        uses: nrwl/last-successful-commit-action@v1
-        id: last_successful_commit
-        with:
-          branch: 'prueba-coment'
-          workflow_id: 'report.txt'
-          github_token: ${{ secrets.GITHUB_TOKEN }}
-      - run: |
-          echo ${{steps.last_successful_commit.outputs.commit_hash}}
-
 
          
