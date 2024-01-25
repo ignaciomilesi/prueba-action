@@ -13,31 +13,6 @@ jobs:
       - name: Acceso al repositorio
         uses: actions/checkout@v3
 
-      - name: Creando y activando un entorno virtual
-        run: |
-           pip3 install virtualenv
-           virtualenv venv
-           source venv/bin/activate          
-           
-      - name: Actualizando el archivo
-        run: |
-           python utils.py
-    
-      - name: Commit y push de los cambios en el archivo .dvc 
-        run: |
-          git config --local user.email "ignacio_m_16@hotmail.com"
-          git config --local user.name "github-actions[bot]"
-          git add report.txt
-          git commit -m "Ultimo update?"
-          git push
-    
-      - name: Carga del comentarista
-        uses: iterative/setup-cml@v2
-
-      - name: Carga de comentario
-        run: |
-          cat report.txt >> report.md 
-          cml comment create --target=commit/$(git log  --pretty=format:'%h' -1) report.md
 
         
 
