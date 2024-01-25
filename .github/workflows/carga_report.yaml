@@ -3,6 +3,8 @@ on:
   push:
     branches:
       - prueba-coment
+    paths:
+      - report.txt
 
 jobs:
   continuous-training:
@@ -13,21 +15,21 @@ jobs:
       - name: Acceso al repositorio
         uses: actions/checkout@v3
 
+      - name: Actualizar a Node16
+        uses: actions/setup-node@v1
+        with:
+          node-version: '16'
+
       - name: Creando y activando un entorno virtual
         run: |
            pip3 install virtualenv
            virtualenv venv
-           source venv/bin/activate          
+           source venv/bin/activate        
            
-      - name: Actualizando el archivo
+      - uses: iterative/setup-cml@v2
+      - name: Agregado comentario con el reporte
         run: |
-           python utils.py
-    
-      - name: Commit y push de los cambios en el archivo .dvc 
-        run: |
-          git config --local user.email "ignacio_m_16@hotmail.com"
-          git config --local user.name "github-actions[bot]"
-          git add report.txt
-          git commit -m "Ultimo update?"
-          git push
+          cat report.txt >> report.md 
+          cml comment create report.md 
+
          
