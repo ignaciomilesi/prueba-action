@@ -1,5 +1,7 @@
 import random
 
+
+
 def save_random_number() -> None:
     with open("report.txt", "w") as report_file:
         report_file.write("# El numero random es "+ str(random.randint(0,100)))
