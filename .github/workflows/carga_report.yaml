@@ -1,0 +1,36 @@
+name: Carga de comentario
+on:
+  workflow_call:
+  #push:
+  #  branches:
+  #    - prueba-coment
+  #  paths:
+  #    - 'report.txt'
+
+jobs:
+  continuous-training:
+    runs-on: ubuntu-latest
+    env:
+      REPO_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+    steps:
+      - name: Acceso al repositorio
+        uses: actions/checkout@v3
+
+      - name: Actualizar a Node16
+        uses: actions/setup-node@v1
+        with:
+          node-version: '16'
+
+      - name: Creando y activando un entorno virtual
+        run: |
+           pip3 install virtualenv
+           virtualenv venv
+           source venv/bin/activate        
+           
+      - uses: iterative/setup-cml@v2
+      - name: Agregado comentario con el reporte
+        run: |
+          cat report.txt >> report.md 
+          cml comment create report.md 
+
+         
