@@ -31,8 +31,8 @@ jobs:
           git commit -m "Ultimo update?"
           git push
 
-      - name: Carga del comentarista
-        uses: iterative/setup-cml@v2
+      #- name: Carga del comentarista
+      #  uses: iterative/setup-cml@v2
 
       #- name: Carga de comentario
       #  run: |
@@ -54,7 +54,7 @@ jobs:
           workflow_id: 'entrenamiento_continuo.yaml'
           github_token: ${{ secrets.GITHUB_TOKEN }}
       - run: |
-          echo steps.last_successful_commit.outputs.commit_hash
+          echo ${{steps.last_successful_commit.outputs.commit_hash}}
 
 
          
