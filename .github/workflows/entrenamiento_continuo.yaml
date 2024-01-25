@@ -30,24 +30,14 @@ jobs:
           git add report.txt
           git commit -m "Ultimo update?"
           git push
-          
-          echo $(git log  --pretty=format:'%h' -1)
-          hash-commit=$(git log  --pretty=format:'%h' -1)
+    
+      - name: Carga del comentarista
+        uses: iterative/setup-cml@v2
 
-      - name: prueba de hash 
+      - name: Carga de comentario
         run: |
-          $hash-commit
-
-
-
-      #- name: Carga del comentarista
-      #  uses: iterative/setup-cml@v2
-
-      #- name: Carga de comentario
-      #  run: |
-
-      #    cat report.txt >> report.md 
-      #    cml comment create --target=commit/355d689 report.md
+          cat report.txt >> report.md 
+          cml comment create --target=commit/$(git log  --pretty=format:'%h' -1) report.md
 
         
 
