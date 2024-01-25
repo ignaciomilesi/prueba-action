@@ -31,5 +31,7 @@ jobs:
           git commit -m "Ultimo update?"
           git push
 
-        uses: ignaciomilesi/prueba-action/.github/workflows/carga_report.yaml
+
+  carga-comentario:
+    uses: ignaciomilesi/prueba-action/.github/workflows/carga_report.yaml
          
