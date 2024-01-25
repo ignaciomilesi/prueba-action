@@ -33,6 +33,8 @@ jobs:
           
           hash-commit = $(git log  --pretty=format:'%h' -1)
 
+      - name: prueba de hash 
+        run: |
           $hash-commit
 
 
