@@ -33,5 +33,5 @@ jobs:
 
 
   carga-comentario:
-    uses: ./.github/workflows/carga_report.yaml@v1
+    uses: ./.github/workflows/carga_report.yaml
          
