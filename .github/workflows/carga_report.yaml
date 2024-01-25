@@ -1,14 +1,13 @@
 name: Carga de comentario
 on:
-  workflow_call:
-  #push:
-  #  branches:
-  #    - prueba-coment
-  #  paths:
-  #    - 'report.txt'
+  push:
+    branches:
+      - prueba-coment
+
+  workflow_dispatch:
 
 jobs:
-  continuous-training:
+  comentario:
     runs-on: ubuntu-latest
     env:
       REPO_TOKEN: ${{ secrets.GITHUB_TOKEN }}
