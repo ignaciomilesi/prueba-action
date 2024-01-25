@@ -33,5 +33,5 @@ jobs:
 
 
   carga-comentario:
-    uses: carga_report.yaml
+    uses: carga_report.yaml@v1
          
