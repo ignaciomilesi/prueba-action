@@ -31,8 +31,8 @@ jobs:
           git commit -m "Ultimo update?"
           git push
 
-      - uses: iterative/setup-cml@v2
-      - name: Agregado comentario con el reporte
+      - name: Carga de comentario
+        uses: iterative/setup-cml@v2
         run: |
 
           git clone https://github.com/ignaciomilesi/prueba-action.git
@@ -43,6 +43,15 @@ jobs:
           echo ${{ github.ref }}
           echo ${{ github.head.ref }}
           echo ${{ github.sha }}
+        
+      - name: Create comment
+        uses: peter-evans/create-or-update-comment@v4
+        with:
+          issue-number: 1
+          body: |
+            This is a multi-line test comment
+            - With GitHub **Markdown** :sparkles:
+            - Created by [create-or-update-comment]
 
 
          
