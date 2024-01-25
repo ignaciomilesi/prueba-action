@@ -33,27 +33,28 @@ jobs:
 
       - name: Carga del comentarista
         uses: iterative/setup-cml@v2
-        
-      - name: Carga de comentario
-        run: |
 
-          git clone https://github.com/ignaciomilesi/prueba-action.git
+      #- name: Carga de comentario
+      #  run: |
 
-          cat report.txt >> report.md 
-          cml comment create report.md
+      #    git clone https://github.com/ignaciomilesi/prueba-action.git
 
-          echo ${{ github.ref }}
-          echo ${{ github.head.ref }}
-          echo ${{ github.sha }}
+      #    cat report.txt >> report.md 
+      #    cml comment create report.md
+
+      #    echo ${{ github.ref }}
+      #    echo ${{ github.head.ref }}
+      #    echo ${{ github.sha }}
         
       - name: Create comment
-        uses: peter-evans/create-or-update-comment@v4
+        uses: nrwl/last-successful-commit-action@v1
+        id: last_successful_commit
         with:
-          issue-number: 1
-          body: |
-            This is a multi-line test comment
-            - With GitHub **Markdown** :sparkles:
-            - Created by [create-or-update-comment]
+          branch: 'prueba-coment'
+          workflow_id: 'entrenamiento_continuo.yaml'
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+      - run: |
+          echo steps.last_successful_commit.outputs.commit_hash
 
 
          
