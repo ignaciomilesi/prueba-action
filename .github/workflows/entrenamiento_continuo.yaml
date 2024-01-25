@@ -31,7 +31,8 @@ jobs:
           git commit -m "Ultimo update?"
           git push
           
-          export hash-commit=$(git log  --pretty=format:'%h' -1)
+          echo $(git log  --pretty=format:'%h' -1)
+          hash-commit=$(git log  --pretty=format:'%h' -1)
 
       - name: prueba de hash 
         run: |
