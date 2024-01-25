@@ -31,6 +31,16 @@ jobs:
           git commit -m "Ultimo update?"
           git push
 
+      - uses: actions/checkout@v3
+        with:
+          repository: ignaciomilesi/prueba-action
+          path: head
+      - uses: iterative/setup-cml@v2
+      - name: Agregado comentario con el reporte
+        run: |
+          cat report.txt >> report.md 
+          cml comment create report.md
+
           echo ${{ github.ref }}
           echo ${{ github.head.ref }}
           echo ${{ github.sha }}
