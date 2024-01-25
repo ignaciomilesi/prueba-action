@@ -31,8 +31,10 @@ jobs:
           git commit -m "Ultimo update?"
           git push
 
-      - name: Carga de comentario
+      - name: Carga del comentarista
         uses: iterative/setup-cml@v2
+        
+      - name: Carga de comentario
         run: |
 
           git clone https://github.com/ignaciomilesi/prueba-action.git
