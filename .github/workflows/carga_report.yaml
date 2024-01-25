@@ -3,13 +3,8 @@ on:
   push:
     branches:
       - prueba-coment
-      
+
   workflow_dispatch:
-    inputs:
-      name:
-        description: "Motivo"
-        default: "Prueba de modelo"
-        
 
 jobs:
   comentario:
