@@ -51,7 +51,7 @@ jobs:
         id: last_successful_commit
         with:
           branch: 'prueba-coment'
-          workflow_id: 'entrenamiento_continuo.yaml'
+          workflow_id: 'report.txt'
           github_token: ${{ secrets.GITHUB_TOKEN }}
       - run: |
           echo ${{steps.last_successful_commit.outputs.commit_hash}}
