@@ -31,7 +31,9 @@ jobs:
           git commit -m "Ultimo update?"
           git push
 
+          echo ${{ github.ref }}
+          echo ${{ github.head.ref }}
+          echo ${{ github.sha }}
 
-  carga-comentario:
-    uses: ./.github/workflows/carga_report.yaml
+
          
