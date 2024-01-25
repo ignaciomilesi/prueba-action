@@ -31,6 +31,5 @@ jobs:
           git commit -m "Ultimo update?"
           git push
 
-      - name: llamado al otro workflow
         uses: ignaciomilesi/prueba-action/.github/workflows/carga_report.yaml
          
