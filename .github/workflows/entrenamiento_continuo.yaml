@@ -30,7 +30,7 @@ jobs:
           git add report.txt
           git commit -m "Ultimo update?"
           git push
-          git log -1
+          git log  --pretty=format:'%h' -1
 
       #- name: Carga del comentarista
       #  uses: iterative/setup-cml@v2
