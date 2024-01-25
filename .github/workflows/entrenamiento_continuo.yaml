@@ -33,5 +33,5 @@ jobs:
 
 
   carga-comentario:
-    uses: ignaciomilesi/prueba-action/.github/workflows/carga_report.yaml
+    uses: carga_report.yaml
          
