@@ -1,11 +1,8 @@
 name: Carga de comentario
 on:
   workflow_dispatch:
-    inputs:
-      name:
-        description: "Motivo"
-        default: "Prueba de modelo"
-        
+
+
 
 jobs:
   comentario:
