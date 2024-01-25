@@ -1,1 +1,1 @@
-# El numero random es 20
+# El numero random es 60
